@@ -1,0 +1,7 @@
+# No-model runner for smoke-testing the pipeline wiring only. It just echoes
+# the prompt back — never use it to produce data for analysis.
+model_id: echo
+backend: echo
+checkpoint: null
+max_new_tokens: 200
+seed: 0

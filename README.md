@@ -22,9 +22,11 @@ Python package / CLI name: `llm_failure_localization` / `stagefail` (unchanged �
 ```bash
 pip install -e ".[dev]"
 pytest
+stagefail run --task configs/tasks/gsm8k_fixture.example.yaml --model configs/models/echo.example.yaml
 ```
 
-See `docs/quickstart.md` for running one task instance through one model end-to-end.
+The `stagefail run` line above is a no-model, no-network smoke test of the pipeline
+wiring. See `docs/quickstart.md` for running a real model end-to-end.
 
 ## Repository layout
 
@@ -45,8 +47,16 @@ docs/                  # quickstart and schema documentation
 
 ## Status
 
-Early scaffold (Milestone M0). See the project's implementation plan doc for the full
-milestone sequence.
+- **M0** — repo scaffold, license, CI, src layout, stage schema, base adapter. Done.
+- **M1** — concrete task adapter: `GSM8KAdapter` (`math_reasoning` domain, 5-stage prompt
+  sequence, local-JSONL or Hugging Face `datasets` loading). Done.
+- **M2** — model runners: `EchoRunner` (smoke test), `OllamaRunner`, `HFTransformersRunner`.
+  `vllm` not yet implemented. Done.
+- **M3** — pipeline executor + JSONL stage logger, wired to `stagefail run`. Done.
+- **M6-M8** — per-stage evaluation, failure localization/classification/propagation,
+  cross-model/task comparison. Not started; see `stagefail evaluate|localize|compare`.
+
+See the project's implementation plan doc for the full milestone sequence.
 
 ## License
 

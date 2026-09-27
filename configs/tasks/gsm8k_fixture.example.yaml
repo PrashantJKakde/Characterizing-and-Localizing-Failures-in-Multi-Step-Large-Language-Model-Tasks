@@ -1,0 +1,8 @@
+# Offline smoke-test task config — 3 tiny fixture problems, no network needed.
+# Pair with configs/models/echo.example.yaml to verify the adapter -> runner ->
+# pipeline wiring without a GPU, model download, or server.
+domain: math_reasoning
+name: gsm8k
+source: tests/fixtures/gsm8k_sample.jsonl
+split: test
+stage_schema: configs/stages/math_reasoning.example.yaml

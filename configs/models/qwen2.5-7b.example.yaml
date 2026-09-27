@@ -1,0 +1,7 @@
+# Example model config — copy and edit per model (M2).
+model_id: qwen2.5-7b
+backend: hf_transformers        # hf_transformers | vllm | ollama
+checkpoint: "Qwen/Qwen2.5-7B-Instruct"
+quantization: null               # e.g. "4bit" | "8bit" | null
+max_new_tokens: 512
+seed: 0
