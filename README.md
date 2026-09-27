@@ -1,12 +1,13 @@
-# llm-multistep-failure-localization
+# Characterizing and Localizing Failures in Multi-Step Large Language Model Tasks
 
-Characterizing and localizing failures in multi-step LLM tasks: a small pipeline that runs a
-task through an open-weights model, captures every intermediate stage's output, and localizes,
-classifies, and traces the failure when the final answer is wrong.
+A small pipeline that runs a task through an open-weights model, captures every intermediate
+stage's output, and localizes, classifies, and traces the failure when the final answer is wrong.
 
-This is the engineering counterpart to the thesis *"Characterizing and Localizing Failures in
-Multi-Step Large Language Model Tasks."* It is a measurement toolkit, not a self-correction or
-auto-repair system — it does not fix model outputs, it characterizes how and where they fail.
+This is the engineering counterpart to the thesis of the same name. It is a measurement
+toolkit, not a self-correction or auto-repair system — it does not fix model outputs, it
+characterizes how and where they fail.
+
+Python package / CLI name: `llm_failure_localization` / `stagefail` (unchanged — see below).
 
 ## Scope
 
