@@ -1,0 +1,8 @@
+# Example stage schema for a task domain (Step 3, M1).
+domain: math_reasoning
+stages:
+  - understanding
+  - extraction
+  - reasoning
+  - calculation
+  - synthesis

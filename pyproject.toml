@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-failure-localization"
+version = "0.0.1"
+description = "Characterizing and localizing failures in multi-step LLM tasks (open-weights models only)."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [{ name = "Aditya Kakade" }]
+dependencies = [
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "click>=8.1",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+inference = [
+    "transformers>=4.40",
+    "accelerate>=0.30",
+]
+
+[project.scripts]
+stagefail = "llm_failure_localization.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_failure_localization"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

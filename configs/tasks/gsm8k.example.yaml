@@ -1,0 +1,6 @@
+# Example task config — copy and edit per task domain (M1).
+domain: math_reasoning
+name: gsm8k
+source: "openai/gsm8k"          # e.g. a Hugging Face dataset id
+split: test
+stage_schema: configs/stages/math_reasoning.yaml
